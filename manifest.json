@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub CSS",
+  "version": "1.0",
+  "description": "Applies custom CSS to GitHub.",
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*", "*://*.githubusercontent.com/*"],
+      "js": ["github-injector.js"],
+      "css": ["github.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.sourcegraph.com/*"],
+      "js": ["sourcegraph-injector.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": []
+}
+
